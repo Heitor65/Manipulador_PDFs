@@ -9,7 +9,7 @@ def turn_pdf_2_png(pdf_path):
 		img.save(f"pagina_{i+1}.png", "PNG")
 
 def turn_up_side_down(pdf_path):
-	with pikepdf.Pdf.open('input.pdf') as pdf:
+	with pikepdf.Pdf.open(pdf_path) as pdf:
 		for page in pdf.pages:
 			page.rotate(180, relative=True) # Gira 180° em relação à orientação atual
 		pdf.save('rotated.pdf')
